@@ -1,7 +1,7 @@
 [project]
 name = "wordsearch"
 version = "0.1.0"
-description = "Add your description here"
+description = "Program to create word searchs"
 readme = "README.md"
 authors = [
     { name = "Dale", email = "daleobrien@users.noreply.github.com" }

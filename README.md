@@ -95,6 +95,55 @@ uv run wordsearch -p example.pdf words.txt hidden.txt
 Rendering is done with [ReportLab](https://pypi.org/project/reportlab/), a
 project dependency, on A4 paper.
 
+## Example
+
+Create a small word list and run the tool:
+
+```sh
+$ printf 'apple\ngrape\nlemon\nmelon\npeach\nberry\n' > fruit.txt
+$ uv run wordsearch -l 4 fruit.txt
+
+┌───┬───┬───┬───┬───┬───┬───┐
+│ X │ U │ R │ A │ L │ M │ P │
+├───┼───┼───┼───┼───┼───┼───┤
+│ O │ W │ B │ P │ E │ E │ E │
+├───┼───┼───┼───┼───┼───┼───┤
+│ H │ H │ G │ P │ M │ L │ A │
+├───┼───┼───┼───┼───┼───┼───┤
+│ A │ X │ R │ L │ O │ O │ C │
+├───┼───┼───┼───┼───┼───┼───┤
+│ W │ T │ A │ E │ N │ N │ H │
+├───┼───┼───┼───┼───┼───┼───┤
+│ V │ O │ P │ N │ Y │ P │ Z │
+├───┼───┼───┼───┼───┼───┼───┤
+│ I │ B │ E │ R │ R │ Y │ B │
+└───┴───┴───┴───┴───┴───┴───┘
+
+ apple  grape  melon
+ berry  lemon  peach
+
+┌───┬───┬───┬───┬───┬───┬───┐
+│   │   │   │ A │ L │ M │ P │
+├───┼───┼───┼───┼───┼───┼───┤
+│   │   │   │ P │ E │ E │ E │
+├───┼───┼───┼───┼───┼───┼───┤
+│   │   │ G │ P │ M │ L │ A │
+├───┼───┼───┼───┼───┼───┼───┤
+│   │   │ R │ L │ O │ O │ C │
+├───┼───┼───┼───┼───┼───┼───┤
+│   │   │ A │ E │ N │ N │ H │
+├───┼───┼───┼───┼───┼───┼───┤
+│   │   │ P │   │   │   │   │
+├───┼───┼───┼───┼───┼───┼───┤
+│   │ B │ E │ R │ R │ Y │   │
+└───┴───┴───┴───┴───┴───┴───┘
+```
+
+In order, that is: the puzzle grid, the key (words to find), and the solution
+grid — for instance `apple` runs down the middle column and `berry` runs across
+the bottom row. The filler letters are chosen at random, so each run produces a
+different grid.
+
 ## Development
 
 ```sh
