@@ -1,0 +1,20 @@
+[project]
+name = "wordsearch"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Dale", email = "daleobrien@users.noreply.github.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "docopt>=0.6.2",
+    "reportlab>=5.0.1",
+]
+
+[project.scripts]
+wordsearch = "wordsearch.main:main"
+
+[build-system]
+requires = ["uv_build>=0.12.18,<0.13.0"]
+build-backend = "uv_build"
